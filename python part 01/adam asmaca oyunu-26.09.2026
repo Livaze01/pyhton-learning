@@ -1,0 +1,39 @@
+gizli_kelime = "kurbağa"
+kalan_hak = 6
+tahmin_edilen = ["_", "_", "_", "_", "_", "_", "_"]
+
+print("---ADAM ASMACA OYUNUNA HOŞGELDİNİZ---")
+
+while kalan_hak > 0 and "_" in tahmin_edilen:
+    print("\nKelime: " + "".join(tahmin_edilen))
+    print(f"Kalan Hakkınız: {kalan_hak}")
+
+    harf = input("Bir harf tahmin edin: ").lower()
+
+    if harf in gizli_kelime:
+        print("Doğru harf aldın.")
+
+        # 'kurbaga kelimesindeki harflerin yerlerini tek tek kontrol ediyoruz:
+        if harf == "k":
+            tahmin_edilen[0] = "k"
+        elif harf == "u":
+            tahmin_edilen[1] = "u"
+        elif harf == "r":
+            tahmin_edilen[2] = "r"
+        elif harf == "b":
+            tahmin_edilen[3] = "b"
+        elif harf == "a":
+            tahmin_edilen[4] = "a"
+            tahmin_edilen[6] = "a" # 'a' harfi hem 4. hem de 6. dırada var!
+        elif harf == "ğ":
+            tahmin_edilen[5] = "ğ"  # Doğrudan 'ğ' harfini eşleştiriyoruz
+
+    else:
+        print("Yanlış Harf!")
+        kalan_hak = kalan_hak - 1 # Hakkını 1 azaltıyoruz
+
+# Oyun Sonu Kontrolü
+if "_" not in tahmin_edilen:
+    print("\nTebtikler! Gizli kelimeyi bildiniz: " + gizli_kelime)
+else:
+    print("\nHakkınız bitti! Gizli kelime şuygu: " + gizli_kelime)
