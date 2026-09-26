@@ -1,0 +1,15 @@
+a = 3
+b = 9.16
+c = "Lıvaze"
+d = [1,2,3,4,5,"phyton"]
+e = (1,2,3,4,5,"pycharm")
+g = True
+h = False
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(g))
+print(type(h))
